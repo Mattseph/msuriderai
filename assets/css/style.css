@@ -72,6 +72,33 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Back to home button
+--------------------------------------------------------------*/
+.back-to-home {
+  position: fixed;
+  left: 110px;
+  top: 50px;
+  z-index: 996;
+  background: #47b2e4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-home i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-home:hover {
+  background: #6bc1e9;
+  color: #fff;
+}
+
+
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -318,7 +345,6 @@ h6 {
   position: absolute;
   top: 55px;
   right: 15px;
-  bottom: 15px;
   left: 15px;
   padding: 10px 0;
   border-radius: 10px;
@@ -622,8 +648,14 @@ section {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+.why-us {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
 .why-us .content {
-  padding: 60px 100px 0 100px;
+  padding: 60px 100px 0px 100px;
 }
 
 .why-us .content h3 {
@@ -762,13 +794,14 @@ section {
 }
 
 .team .member .pic {
-  overflow: hidden;
   width: 180px;
-  border-radius: 50%;
+  height: 100%;
 }
+
 
 .team .member .pic img {
   transition: ease-in-out 0.3s;
+  border-radius: 50%;
 }
 
 .team .member:hover {
