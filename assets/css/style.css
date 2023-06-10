@@ -700,13 +700,15 @@ section {
 
 .team .member .pic {
   width: 180px;
-  height: 100%;
+  height: 180px;
 }
 
-
 .team .member .pic img {
-  transition: ease-in-out 0.3s;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  object-fit: cover;
+  transition: ease-in-out 0.3s;
 }
 
 .team .member:hover {
