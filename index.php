@@ -1,3 +1,5 @@
+<?php require './conn.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +40,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">MSURIDER</a></h1>
+      <h1 class="logo me-auto"><a href="./">MSURIDER</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -63,14 +65,14 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>MSU Accredited Rider's Scanner</h1>
           <h2>Use CAMERA or UPLOAD IMAGE</h2>
-          <div class="position-relative">
-            <div class="mb-2" id="webcam-container"></div>
-            <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button>
-            <button type="button" class="btn btn-outline-secondary position-absolute bottom-0 end-0 m-2" id="switchCamera" onclick="switchCamera()" style="display:none">Switch Camera</button>
-          </div>
+
+          <div class="mb-2 position-relative" id="webcam-container"></div>
+          <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button>
+          <button type="button" class="btn btn-outline-secondary position-absolute bottom-0 end-0 m-2" id="switchCamera" onclick="switchCamera()" style="display:none">Switch Camera</button>
+
           <p class="text-danger" id="message-container"></p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <button type="button" id="startCamera" onclick="startCamera()" class="btn-get-started scrollto">Camera</button>
+            <button type="button" id="startCamera" onclick="startCamera()" class="btn-start-camera scrollto">Camera <i class='bi-camera-fill'></i> </button>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -89,145 +91,57 @@
 
         <div class="section-title">
           <h2>Officer</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>
+            Names of the newly elected officer's of our group MSU Rider's Association help on April 29, 2023.
+          </p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Matthew Joseph F. Bilaos</h4>
-                <span>Chief Executive Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
 
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Cherry Grace Medico</h4>
-                <span>Product Manager</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          $officers = ['President', 'Vice-President', 'Secretary', 'Treasurer', 'Business Manager', 'Auditor', 'Public Information Officer', 'Board Of Director'];
 
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Jeff Matthew D. Capinig</h4>
-                <span>CTO</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          $placeholder = str_repeat('?,', count($officers) - 1) . '?';
 
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Kenjesan Parlero</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          $officerQuery = "SELECT r.last_name, r.first_name, r.mid_name, r.suffix, ac.designation, ac.date_of_membership, ac.img_url FROM rider r RIGHT JOIN registered_rider_profile ac ON r.rider_id = ac.rider_id WHERE ac.designation IN ($placeholder) ORDER BY
+          CASE ac.designation
+            WHEN 'President' THEN 1
+            WHEN 'Vice-President' THEN 2
+            WHEN 'Secretary' THEN 3
+            WHEN 'Treasurer' THEN 4
+            WHEN 'Business Manager' THEN 5
+            WHEN 'Auditor' THEN 6
+            WHEN 'Public Information Officer' THEN 7
+            WHEN 'Board Of Director' THEN 8
+          END";
 
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Arviel Delos Santos</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          $officerStatement = $pdo->prepare($officerQuery);
+          $officerStatement->execute($officers);
 
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Jan Marc Esver</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          while ($officer = $officerStatement->fetch(PDO::FETCH_ASSOC)) {
 
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Cyrus Jade Gallano</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+          ?>
+            <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="member d-flex align-items-start">
+                <div class="pic"><img src="assets/img/rider/<?php echo $officer['img_url'] ?>" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                  <h4>
+                    <?php echo $officer['last_name'] ?>,
+                    <?php echo $officer['first_name'] ?>
+                    <?php echo $officer['mid_name'] ? $officer['mid_name'][0] . "." : "" ?>
+                    <?php echo $officer['suffix'] ?></h4>
+                  <span><?php echo $officer['designation'] ?></span>
+                  <p>Member Since <?php echo $officer['date_of_membership'] ?></p>
+                  <div class="social">
+                    <a href=""><i class="ri-twitter-fill"></i></a>
+                    <a href=""><i class="ri-facebook-fill"></i></a>
+                    <a href=""><i class="ri-instagram-fill"></i></a>
+                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Aldrin Halinon</h4>
-                <span>Accountant</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php  } ?>
         </div>
       </div>
     </section><!-- End Team Section -->
