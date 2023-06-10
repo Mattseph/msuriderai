@@ -18,7 +18,7 @@ if ($riderStatement->rowCount() === 1) {
 
     $clean_rider_no = filter_var($rider['rider_no'], FILTER_SANITIZE_NUMBER_INT);
     $rider_no = filter_var($clean_rider_no, FILTER_VALIDATE_INT);
-    $name = htmlspecialchars($rider['last_name'] . ', ' . $rider["first_name"] . $rider['mid_name'] ?? ' ' . $rider['suffix']);
+    $name = htmlspecialchars($rider['last_name'] . ', ' . $rider["first_name"] . ' ' . $rider['mid_name'] ?? ' ' . $rider['suffix']);
     $designation = htmlspecialchars($rider['designation']);
     $official_reciept = htmlspecialchars($rider['official_reciept']);
     $or_expiration_date = htmlspecialchars($rider['or_expiration_date']);
@@ -49,27 +49,68 @@ if ($riderStatement->rowCount() === 1) {
 }
 
 ?>
-<main class="container">
-    <div class="row">
-        <div class="col d-flex flex-column justify-content-center align-items-center vh-100">
-            <div class="card card-container">
-                <div class="card-body p-5">
-                    <h2 class="text-center">Driver's Information</h2>
-                    <p><strong>Name:</strong> <?php echo $name ?></p>
-                    <p><strong>Designation:</strong> <?php echo $designation ?></p>
-                    <p><strong>Driver's No:</strong> <?php echo $rider_no ?></p>
-                    <p><strong>Official Receipt:</strong> <?php echo $official_reciept ?></p>
-                    <p><strong>Official Receipt Expiration:</strong> <?php echo $or_expiration_date ?></p>
-                    <p><strong>Certificate of Registration:</strong> <?php echo $certificate_of_registration ?></p>
-                    <p><strong>Driver's License:</strong> <?php echo $licenseNumber ?></p>
-                    <p><strong>Driver's License Expiration:</strong> <?php echo $license_expiration_date ?></p>
-                    <p><strong>Contact Number:</strong> <?php echo $contact_number ?></p>
-                    <p><strong>Status:</strong> <?php echo $status ?></p>
+
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                <div class="content">
+                    <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
                 </div>
+
+                <div class="accordion-list">
+                    <ul>
+                        <li>
+                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Driver's Information <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+
+
+                                <p> Name: <?php echo $name ?></p>
+                                <p>Designation: <?php echo $designation ?></p>
+                                <p>Driver's No: <?php echo $rider_no ?></p>
+
+                                <?php if ($official_reciept) : ?>
+                                    <p>Official Receipt: <?php echo $official_reciept ?></p>
+                                <?php endif ?>
+
+                                <?php if ($or_expiration_date) : ?>
+                                    <p>Official Receipt Expiration: <?php echo $or_expiration_date ?></p>
+                                <?php endif ?>
+
+                                <?php if ($certificate_of_registration) : ?>
+                                    <p>Certificate of Registration: <?php echo $certificate_of_registration ?></p>
+                                <?php endif ?>
+
+                                <?php if ($licenseNumber) : ?>
+                                    <p>Driver's License: <?php echo $licenseNumber ?></p>
+                                <?php endif ?>
+
+                                <?php if ($license_expiration_date) : ?>
+                                    <p>Driver's License Expiration: <?php echo $license_expiration_date ?></p>
+                                <?php endif ?>
+
+                                <?php if ($contact_number) : ?>
+                                    <p>Contact Number: <?php echo $contact_number ?></p>
+                                <?php endif; ?>
+                                <p>Status: <?php echo $status ?></p>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
             </div>
+
+            <div class="col-lg-5 align-items-center order-1 order-lg-2 img" style='background-image: url("./../assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
         </div>
+
     </div>
-</main>
+</section><!-- End Why Us Section -->
 
 
 <?php require './../include/footer.php'; ?>
