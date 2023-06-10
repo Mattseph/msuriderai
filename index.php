@@ -64,6 +64,7 @@
           <div class="position-relative">
             <div class="mb-2" id="webcam-container"></div>
             <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button>
+            <button type="button" class="btn btn-outline-secondary position-absolute bottom-0 end-0 m-2" id="switchCamera" onclick="switchCamera()" style="display:none">Switch Camera</button>
           </div>
           <p class="text-danger" id="message-container"></p>
           <div class="d-flex justify-content-center justify-content-lg-start">

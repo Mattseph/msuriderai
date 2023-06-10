@@ -5,7 +5,7 @@
 const URL = "https://teachablemachine.withgoogle.com/models/cAt3TQ3_A/";
 
 let model, webcam, maxPredictions, messageContainer;
-
+let currentCamera = "front"; 
 let isCameraRunning = false;
 // Load the image model and setup the webcam
 async function init() {
@@ -24,7 +24,7 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
     // Convenience function to setup a webcam
-    const flip = true; // whether to flip the webcam
+    const flip = currentCamera === "front"; // whether to flip the webcam
     webcam = new tmImage.Webcam(250, 250, flip); // width, height, flip
     await webcam.setup(); // request access to the webcam
     await webcam.play();
@@ -33,6 +33,7 @@ async function init() {
     document.getElementById('webcam-container').style.display = 'block';
     document.getElementById('message-container').style.display = 'block';
     document.getElementById('stopCamera').style.display = 'block';
+    document.getElementById('switchCamera').style.display = 'block';
     document.getElementById('startCamera').style.display = 'none';
     // append elements to the DOM
     const webcamContainer = document.getElementById("webcam-container");
@@ -40,6 +41,16 @@ async function init() {
     webcamContainer.appendChild(webcam.canvas);
     messageContainer = document.getElementById("message-container");
 
+}
+
+// Function to switch between the front and back cameras
+function switchCamera() {
+  if (currentCamera === "front") {
+      currentCamera = "back";
+  } else {
+      currentCamera = "front";
+  }
+  init(); // Reinitialize the webcam with the new camera
 }
 
 function startCamera() {
