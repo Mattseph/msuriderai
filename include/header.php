@@ -32,27 +32,5 @@
 </head>
 
 <body>
-
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
-        <div class="container d-flex align-items-center">
-
-            <h1 class="logo me-auto"><a href="./../">MSURIDER</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="./../">Home</a></li>
-                    <li><a class="nav-link scrollto" href="./../profile/aboutus.php">About</a></li>
-                    <li><a class="nav-link scrollto" href="./../profile/developer.php">Team</a></li>
-                    <li><a class="nav-link scrollto" href="./../profile/rider-officer.php">Officer</a></li>
-                    <li><a class="getstarted scrollto" href="./../">Get Started</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header><!-- End Header -->
+    <a href="./../" class="back-to-home d-flex align-items-center justify-content-center"><i class="bi bi-arrow-left-short"></i></a>
