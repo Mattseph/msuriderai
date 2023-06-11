@@ -123,7 +123,11 @@
           ?>
             <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
               <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/rider/<?php echo $officer['img_url'] ?>" class="img-fluid" alt=""></div>
+                <?php if ($officer['img_url'] && file_exists("assets/img/rider/$officer[img_url]")) : ?>
+                  <div class="pic"><img src="assets/img/rider/<?php echo $officer['img_url'] ?>" class="img-fluid" alt=""></div>
+                <?php else : ?>
+                  <div class="pic"><img src="assets/img/default-img.svg ?>" class="img-fluid" alt=""></div>
+                <?php endif; ?>
                 <div class="member-info">
                   <h4>
                     <?php echo $officer['last_name'] ?>,
@@ -167,7 +171,12 @@
 
             <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
               <div class="member d-flex align-items-start">
-                <div class="pic"><img src="assets/img/developer/<?php echo $developer['img_url'] ?>" class="img-fluid" alt=""></div>
+                <?php if ($developer['img_url'] && file_exists("assets/img/developer/$developer[img_url]")) : ?>
+                  <div class="pic"><img src="assets/img/developer/<?php echo $developer['img_url'] ?>" class="img-fluid" alt=""></div>
+                <?php else : ?>
+                  <div class="pic"><img src="assets/img/default-img.svg" class="img-fluid" alt=""></div>
+                <?php endif; ?>
+
                 <div class="member-info">
                   <h4><?php echo $developer['last_name'] ?>,
                     <?php echo $developer['first_name'] ?>
