@@ -15,12 +15,12 @@ body {
 }
 
 a {
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(233,226,199);
+  color: rgb(233, 226, 199);
   text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: rgb(79,2,5);
+  background: rgb(79, 2, 5);
 }
 
 #preloader:before {
@@ -52,7 +52,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid rgb(233,226,199);
+  border: 6px solid rgb(233, 226, 199);
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -71,15 +71,18 @@ h6 {
   }
 }
 
+
+
+
 /*--------------------------------------------------------------
 # Back to home button
 --------------------------------------------------------------*/
 .back-to-home {
   position: fixed;
-  left: 110px;
-  top: 50px;
+  left: 30px;
+  top: 30px;
   z-index: 996;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -93,7 +96,7 @@ h6 {
 }
 
 .back-to-home:hover {
-  background: rgb(233,226,199);
+  background: rgb(233, 226, 199);
   color: #fff;
 }
 
@@ -108,7 +111,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -122,7 +125,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: rgb(233,226,199);
+  background: rgb(233, 226, 199);
   color: #fff;
 }
 
@@ -142,7 +145,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgb(79,2,5, 0.9);
+  background: rgb(79, 2, 5, 0.9);
 }
 
 #header .logo {
@@ -209,7 +212,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: rgb(233,226,199);
+  color: rgb(233, 226, 199);
 }
 
 .navbar .getstarted,
@@ -219,14 +222,14 @@ h6 {
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  border: 2px solid rgb(164,110,81);
+  border: 2px solid rgb(164, 110, 81);
   font-weight: 600;
 }
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
 }
 
 
@@ -263,7 +266,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgb(79,2,5);
+  background: rgb(79, 2, 5);
   transition: 0.3s;
   z-index: 999;
 }
@@ -291,19 +294,19 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: rgb(233,226,199);
+  color: rgb(233, 226, 199);
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
 }
 
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
-  color: rgb(233,226,199);
+  color: rgb(233, 226, 199);
 }
 
 
@@ -313,7 +316,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: rgb(79,2,5);
+  background: rgb(79, 2, 5);
 }
 
 #hero .container {
@@ -345,11 +348,11 @@ h6 {
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
 }
 
 #hero .btn-start-camera:hover {
-  background: rgb(233,226,199);
+  background: rgb(233, 226, 199);
 }
 
 #hero .btn-watch-video {
@@ -459,7 +462,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
 }
 
 .section-title h2::before {
@@ -479,7 +482,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -516,7 +519,7 @@ section {
   left: 0;
   top: 2px;
   font-size: 20px;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
   line-height: 1;
 }
 
@@ -534,74 +537,88 @@ section {
   border-radius: 4px;
   transition: 0.3s;
   line-height: 1;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
   animation-delay: 0.8s;
   margin-top: 6px;
-  border: 2px solid rgb(164,110,81);
+  border: 2px solid rgb(164, 110, 81);
 }
 
 .about .content .btn-learn-more:hover {
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
   color: #fff;
   text-decoration: none;
 }
 
 /*--------------------------------------------------------------
-# Why Us
+# Rider
 --------------------------------------------------------------*/
-.why-us {
+.rider {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
-}
-.why-us .content {
-  padding: 60px 100px 0px 100px;
+  
 }
 
-.why-us .content h3 {
+.rider .content {
+  padding: 0px 100px 0px 100px;
+}
+
+.rider .content h3 {
   font-weight: 400;
-  font-size: 34px;
-  color: rgb(164,110,81);
+  font-size: 20px;
+  color: rgb(164, 110, 81);
 }
 
-.why-us .content h4 {
+.rider .content h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
 }
 
-.why-us .content p {
+.rider .content p {
   font-size: 15px;
   color: #848484;
 }
+.rider .accordion-list .pic {
+  width: 180px;
+  height: 180px;
+}
 
-.why-us .img {
+.rider .accordion-list .pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  transition: ease-in-out 0.3s;
+}
+
+.rider .img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.why-us .accordion-list {
-  padding: 0 100px 60px 100px;
+.rider .accordion-list {
+  padding: 25px 100px 25px 100px;
 }
 
-.why-us .accordion-list ul {
+.rider .accordion-list ul {
   padding: 0;
   list-style: none;
 }
 
-.why-us .accordion-list li+li {
+.rider .accordion-list li+li {
   margin-top: 15px;
 }
 
-.why-us .accordion-list li {
+.rider .accordion-list li {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
 }
 
-.why-us .accordion-list a {
+.rider .accordion-list a {
   display: block;
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -613,75 +630,72 @@ section {
   cursor: pointer;
 }
 
-.why-us .accordion-list span {
-  color: rgb(164,110,81);
+.rider .accordion-list span {
+  color: rgb(164, 110, 81);
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
 }
 
-.why-us .accordion-list span:hover {
-  color: rgb(233,226,199);
-}
 
-.why-us .accordion-list i {
+.rider .accordion-list i {
   font-size: 24px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.why-us .accordion-list p {
+.rider .accordion-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
 }
 
-.why-us .accordion-list .icon-show {
+.rider .accordion-list .icon-show {
   display: none;
 }
 
-.why-us .accordion-list a.collapsed {
-  color: rgb(164,110,81);
+.rider .accordion-list a.collapsed {
+  color: rgb(164, 110, 81);
 }
 
-.why-us .accordion-list a.collapsed:hover {
-  color: rgb(233,226,199);
-}
-
-.why-us .accordion-list a.collapsed .icon-show {
+.rider .accordion-list a.collapsed .icon-show {
   display: inline-block;
 }
 
-.why-us .accordion-list a.collapsed .icon-close {
+.rider .accordion-list a.collapsed .icon-close {
   display: none;
 }
 
 @media (max-width: 1024px) {
 
-  .why-us .content,
-  .why-us .accordion-list {
-    padding-left: 0;
-    padding-right: 0;
+  .rider .content,
+  .rider .accordion-list {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 @media (max-width: 992px) {
-  .why-us .img {
-    min-height: 400px;
+  .rider .img {
+    min-height: 300px;
   }
 
-  .why-us .content {
+  .rider .content {
     padding-top: 30px;
   }
 
-  .why-us .accordion-list {
+  .rider .accordion-list {
     padding-bottom: 30px;
+  }
+  .back-to-home {
+    left: 15px;
   }
 }
 
 @media (max-width: 575px) {
-  .why-us .img {
-    min-height: 200px;
+  .rider .img {
+    min-height: 250px;
+
   }
 }
 
@@ -708,6 +722,7 @@ section {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   transition: ease-in-out 0.3s;
 }
 
@@ -723,7 +738,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
 }
 
 .team .member span {
@@ -765,17 +780,18 @@ section {
   border-radius: 50px;
   width: 32px;
   height: 32px;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
 }
 
 .team .member .social a i {
-  color: #eff2f8;;
+  color: #eff2f8;
+  ;
   font-size: 16px;
   margin: 0 2px;
 }
 
 .team .member .social a:hover {
-  background: rgb(233,226,199);
+  background: rgb(233, 226, 199);
 }
 
 .team .member .social a:hover i {
@@ -791,7 +807,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
 }
 
 #footer .footer-top {
@@ -810,7 +826,7 @@ section {
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
 }
 
 #footer .footer-top .footer-contact p {
@@ -824,7 +840,7 @@ section {
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
   position: relative;
   padding-bottom: 12px;
 }
@@ -841,7 +857,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: rgb(164,110,81);
+  color: rgb(164, 110, 81);
   font-size: 18px;
   line-height: 1;
 }
@@ -865,13 +881,13 @@ section {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: rgb(233,226,199);
+  color: rgb(233, 226, 199);
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: rgb(164,110,81);
+  background: rgb(164, 110, 81);
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -884,7 +900,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: rgb(233,226,199);
+  background: rgb(233, 226, 199);
   color: #fff;
   text-decoration: none;
 }
