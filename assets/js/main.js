@@ -32,9 +32,6 @@ async function init() {
 
     document.getElementById('webcam-container').style.display = 'block';
     document.getElementById('message-container').style.display = 'block';
-    document.getElementById('stopCamera').style.display = 'block';
-    document.getElementById('switchCamera').style.display = 'block';
-    document.getElementById('startCamera').style.display = 'none';
     // append elements to the DOM
     const webcamContainer = document.getElementById("webcam-container");
     webcamContainer.innerHTML = "";
@@ -44,14 +41,14 @@ async function init() {
 }
 
 // Function to switch between the front and back cameras
-function switchCamera() {
-  if (currentCamera === "front") {
-      currentCamera = "back";
-  } else {
-      currentCamera = "front";
-  }
-  init(); // Reinitialize the webcam with the new camera
-}
+// function switchCamera() {
+//   if (currentCamera === "front") {
+//       currentCamera = "back";
+//   } else {
+//       currentCamera = "front";
+//   }
+//   init(); // Reinitialize the webcam with the new camera
+// }
 
 function startCamera() {
     if (!isCameraRunning) {
@@ -66,7 +63,7 @@ function stopCamera() {
         isCameraRunning = false;
         document.getElementById('webcam-container').style.display = 'none';
         document.getElementById('message-container').style.display = 'none';
-        document.getElementById('stopCamera').style.display = 'none';
+        // document.getElementById('stopCamera').style.display = 'none';
         document.getElementById('startCamera').style.display = 'block';
     }
 }
@@ -75,12 +72,6 @@ async function loop() {
     webcam.update(); // update the webcam frame
     await predict();
     window.requestAnimationFrame(loop);
-}
-
-function clearCanvas() {
-    const canvas = webcam.canvas;
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 // run the webcam image through the image model
