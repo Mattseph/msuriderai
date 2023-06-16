@@ -54,9 +54,9 @@ if ($riderStatement->rowCount() === 1) {
 <section id="rider" class="rider section-bg">
     <div class="container-fluid" data-aos="fade-up">
 
-        <div class="row">
+        <div class="row justify-content-center">
 
-            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1  d-sm-flex align-items-sm-center justify-content-sm-center">
 
                 <div class="content">
                     <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
