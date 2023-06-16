@@ -26,7 +26,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -48,7 +48,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#officer">Officer</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#team">Developers</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="getstarted scrollto" href="#hero">Get Started</a></li>
         </ul>
@@ -66,16 +66,14 @@
           <h1>MSU Accredited Rider's Scanner</h1>
           <h2>Use CAMERA or UPLOAD IMAGE</h2>
 
-          <div class="mb-2 position-relative" id="webcam-container"></div>
-          <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button>
-          <button type="button" class="btn btn-outline-secondary position-absolute bottom-0 end-0 m-2" id="switchCamera" onclick="switchCamera()" style="display:none">Switch Camera</button>
 
-          <p class="text-danger" id="message-container"></p>
+          <!-- <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button> -->
+
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <button type="button" id="startCamera" onclick="startCamera()" class="btn-start-camera scrollto">Camera <i class='bi-camera-fill'></i> </button>
+            <button type="button" id="startCamera" onclick="startCamera()" class="btn-start-camera scrollto" data-toggle="modal" data-target="#platenumber_scanner">Camera <i class='bi-camera-fill'></i> </button>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+        <div class=" col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
           <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
         </div>
       </div>
@@ -85,7 +83,7 @@
 
   <main id="main">
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Officer Section ======= -->
     <section id="officer" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -122,11 +120,11 @@
 
           ?>
             <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="member d-flex align-items-start">
+              <div class="member d-flex align-items-center">
                 <?php if ($officer['img_url'] && file_exists("assets/img/rider/$officer[img_url]")) : ?>
                   <div class="pic"><img src="assets/img/rider/<?php echo $officer['img_url'] ?>" class="img-fluid" alt=""></div>
                 <?php else : ?>
-                  <div class="pic"><img src="assets/img/default-img.svg ?>" class="img-fluid" alt=""></div>
+                  <div class="pic"><img src="assets/img/default-img.svg" class="img-fluid" alt=""></div>
                 <?php endif; ?>
                 <div class="member-info">
                   <h4>
@@ -151,15 +149,17 @@
       </div>
     </section><!-- End Team Section -->
 
-    <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Team</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Developers</h2>
+          <p>
+            Development Team: MSU Rider Plate Number Scanner
+          </p>
         </div>
-        <div class="row align-items-center">
+
+        <div class="row">
           <?php
           $developerQuery = "SELECT * from developer";
           $developerStatement = $pdo->query($developerQuery);
@@ -168,23 +168,22 @@
           foreach ($developers as $developer) {
 
           ?>
-
             <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="member d-flex align-items-start">
+              <div class="member d-flex align-items-center">
                 <?php if ($developer['img_url'] && file_exists("assets/img/developer/$developer[img_url]")) : ?>
                   <div class="pic"><img src="assets/img/developer/<?php echo $developer['img_url'] ?>" class="img-fluid" alt=""></div>
                 <?php else : ?>
                   <div class="pic"><img src="assets/img/default-img.svg" class="img-fluid" alt=""></div>
                 <?php endif; ?>
-
                 <div class="member-info">
-                  <h4><?php echo $developer['last_name'] ?>,
+                  <h4>
+                    <?php echo $developer['last_name'] ?>,
                     <?php echo $developer['first_name'] ?>
                     <?php echo $developer['mid_name'] ? $developer['mid_name'][0] . "." : "" ?>
                     <?php echo $developer['suffix'] ?>
                   </h4>
-                  <span>3rd-Year BSIT Student</span>
-                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                  <span>3rd Year BSIT</span>
+                  <p></p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
                     <a href=""><i class="ri-facebook-fill"></i></a>
@@ -194,7 +193,7 @@
                 </div>
               </div>
             </div>
-          <?php } ?>
+          <?php  } ?>
         </div>
       </div>
     </section><!-- End Team Section -->
@@ -255,9 +254,9 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./profile/developer.php">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="./profile/developer.php">Developer</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="./profile/rider-officer.php">Officer</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
             </ul>
           </div>
 
@@ -278,7 +277,36 @@
     </div>
   </footer><!-- End Footer -->
 
+
+  <div class="modal" id="platenumber_scanner">
+    <div class="container-sm">
+      <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Plate Number Scanner</h4>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+              <div id="interactive" class="viewport d-flex flex-column align-content-center justify-content-center">
+                <div id="webcam-container"></div>
+                <div class="error">
+                  <p class="text-danger" id="message-container"></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="stopCamera" onclick="stopCamera()">Close</button>
+            </div>
+          </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+      </div> <!-- /.modal -->
+    </div>
+  </div>
+
   <!-- Vendor JS Files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
