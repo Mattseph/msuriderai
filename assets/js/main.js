@@ -24,8 +24,8 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
     // Convenience function to setup a webcam
-    const flip = currentCamera === "front"; // whether to flip the webcam
-    webcam = new tmImage.Webcam(250, 250, flip); // width, height, flip
+    const flip = false; // whether to flip the webcam
+    webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
     await webcam.setup({ facingMode: "environment" }); // request access to the webcam
     await webcam.play();
     window.requestAnimationFrame(loop);
@@ -64,13 +64,14 @@ function stopCamera() {
         document.getElementById('webcam-container').style.display = 'none';
         document.getElementById('message-container').style.display = 'none';
         // document.getElementById('stopCamera').style.display = 'none';
-        document.getElementById('startCamera').style.display = 'block';
+
+        // Clear the message container
+        messageContainer.textContent = "";
     }
 }
 
 async function loop() {
     webcam.update(); // update the webcam frame
-    await predict();
     window.requestAnimationFrame(loop);
 }
 
@@ -87,20 +88,27 @@ async function predict() {
         }
     }
 
-    if (highestPrediction && highestPrediction.probability > 0.9) {
+    if (highestPrediction && highestPrediction.probability > 0.95) {
         const driverNumber = highestPrediction.className;
         sendDriverNumber(driverNumber);
-    } else if (highestPrediction && highestPrediction.probability < 0.7) {
+    } else if (highestPrediction && highestPrediction.probability < 0.95) {
         messageContainer.textContent = "Not Accredited Driver";
     } else {
         messageContainer.textContent = "Please scan a plate number";
     }
+
 }
 
     // Send an HTTP request with the driver's number to the PHP script
 function sendDriverNumber(driverNumber) {
     window.location.href = './driver/camera-platenumber.php?driverNumber=' + driverNumber;
 }
+
+document.getElementById("startScanButton").addEventListener("click", () => {
+  if (isCameraRunning) {
+      predict();
+  }
+});
 
 // function showCameraModal() {
 //     $('#cameraModal').modal('show');

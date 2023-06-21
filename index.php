@@ -302,6 +302,7 @@
               </div>
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="startScanButton">Scan</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal" id="stopCamera" onclick="stopCamera()">Close</button>
             </div>
           </div> <!-- /.modal-content -->
