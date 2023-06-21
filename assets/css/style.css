@@ -982,7 +982,7 @@ section {
 
 #interactive.viewport {
   width: 350px;
-  height: 350px; 
+  height: 250px; 
   overflow: hidden; 
   text-align: center;
 }
