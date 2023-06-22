@@ -3,14 +3,13 @@ require './../include/header.php';
 require './../conn.php';
 
 
-if (filter_has_var(INPUT_GET, 'driverNumber')) {
-    $clean_driver_number = filter_var($_GET['driverNumber'], FILTER_SANITIZE_NUMBER_INT);
-    $driver_number = filter_var($clean_driver_number, FILTER_VALIDATE_INT);
+if (filter_has_var(INPUT_GET, 'plateNumber')) {
+    $plate_number = htmlspecialchars($_GET['plateNumber']);
 }
-$riderQuery = "SELECT * FROM rider, registered_rider_profile WHERE rider_no = :driverNumber AND rider.rider_id = registered_rider_profile.rider_id";
+$riderQuery = "SELECT * FROM rider, registered_rider_profile WHERE plate_number = :plateNumber AND rider.rider_id = registered_rider_profile.rider_id";
 
 $riderStatement = $pdo->prepare($riderQuery);
-$riderStatement->bindParam(":driverNumber", $driver_number);
+$riderStatement->bindParam(":plateNumber", $plate_number);
 $riderStatement->execute();
 
 if ($riderStatement->rowCount() === 1) {
@@ -25,6 +24,7 @@ if ($riderStatement->rowCount() === 1) {
     $certificate_of_registration = htmlspecialchars($rider['certificate_of_registration']);
     $licenseNumber = htmlspecialchars($rider["drivers_license"]);
     $license_expiration_date = htmlspecialchars($rider['license_expiration_date']);
+    $plate_number = htmlspecialchars($rider['plate_number']);
     $contact_number = htmlspecialchars($rider['contact_number']);
     $img_url = htmlspecialchars($rider['img_url']);
     $status = htmlspecialchars("Accredited");
@@ -59,7 +59,7 @@ if ($riderStatement->rowCount() === 1) {
             <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1  d-sm-flex align-items-sm-center justify-content-sm-center">
 
                 <div class="content">
-                    <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                    <!-- <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3> -->
                 </div>
 
                 <div class="accordion-list">
@@ -96,6 +96,10 @@ if ($riderStatement->rowCount() === 1) {
 
                                 <?php if ($license_expiration_date) : ?>
                                     <p>Driver's License Expiration: <?php echo $license_expiration_date ?></p>
+                                <?php endif ?>
+
+                                <?php if ($plate_number) : ?>
+                                    <p>Plate Number: <?php echo $plate_number ?></p>
                                 <?php endif ?>
 
                                 <?php if ($contact_number) : ?>

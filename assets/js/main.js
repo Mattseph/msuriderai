@@ -5,7 +5,6 @@
 const URL = "https://teachablemachine.withgoogle.com/models/cAt3TQ3_A/";
 
 let model, webcam, maxPredictions, messageContainer;
-let currentCamera = "front"; 
 let isCameraRunning = false;
 // Load the image model and setup the webcam
 async function init() {
@@ -24,7 +23,7 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
     // Convenience function to setup a webcam
-    const flip = false; // whether to flip the webcam
+    const flip = false;  // whether to flip the webcam
     webcam = new tmImage.Webcam(350, 200, flip); // width, height, flip
     await webcam.setup({ facingMode: "environment" }); // request access to the webcam
     await webcam.play();
@@ -64,51 +63,44 @@ function stopCamera() {
         document.getElementById('webcam-container').style.display = 'none';
         document.getElementById('message-container').style.display = 'none';
         // document.getElementById('stopCamera').style.display = 'none';
-
-        // Clear the message container
-        messageContainer.textContent = "";
     }
 }
 
 async function loop() {
     webcam.update(); // update the webcam frame
+    await predict();
     window.requestAnimationFrame(loop);
 }
 
+
 // run the webcam image through the image model
 async function predict() {
-    // predict can take in an image, video or canvas html element
-    const prediction = await model.predict(webcam.canvas);
+  // predict can take in an image, video, or canvas HTML element
+  const predictions = await model.predict(webcam.canvas);
+  let highestPrediction = null;
+  let highestProbability = 0.9;
 
-    let highestPrediction = null;
-
-    for (let i = 0; i < maxPredictions; i++) {
-        if (!highestPrediction || prediction[i].probability > highestPrediction.probability) {
-            highestPrediction = prediction[i];
-        }
+  for (let i = 0; i < maxPredictions; i++) {
+    if (predictions[i].probability > highestProbability) {
+      highestPrediction = predictions[i].className;
+      highestProbability = predictions[i].probability;
     }
+  }
 
-    if (highestPrediction && highestPrediction.probability > 0.95) {
-        const driverNumber = highestPrediction.className;
-        sendDriverNumber(driverNumber);
-    } else if (highestPrediction && highestPrediction.probability < 0.95) {
-        messageContainer.textContent = "Not Accredited Driver";
-    } else {
-        messageContainer.textContent = "Please scan a plate number";
-    }
-
+  if (highestPrediction && highestProbability > 0.9) {
+    const plateNumber = highestPrediction;
+    sendPlateNumber(plateNumber);
+  } else if (highestPrediction && highestProbability < 0.8) {
+    messageContainer.textContent = "Not Accredited Driver";
+  } else {
+    messageContainer.textContent = "Please scan a plate number";
+  }
 }
 
     // Send an HTTP request with the driver's number to the PHP script
-function sendDriverNumber(driverNumber) {
-    window.location.href = './driver/camera-platenumber.php?driverNumber=' + driverNumber;
+function sendPlateNumber(plateNumber) {
+    window.location.href = './driver/camera-platenumber.php?plateNumber=' + plateNumber;
 }
-
-document.getElementById("startScanButton").addEventListener("click", () => {
-  if (isCameraRunning) {
-      predict();
-  }
-});
 
 // function showCameraModal() {
 //     $('#cameraModal').modal('show');
