@@ -62,8 +62,6 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>MSU Accredited Rider's Scanner</h1>
-          <h2>Use CAMERA or UPLOAD IMAGE</h2>
-
 
           <!-- <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button> -->
 
@@ -302,7 +300,6 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="startScanButton">Scan</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal" id="stopCamera" onclick="stopCamera()">Close</button>
             </div>
           </div> <!-- /.modal-content -->
