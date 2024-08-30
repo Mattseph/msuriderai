@@ -133,10 +133,8 @@
                   <span><?php echo $officer['designation'] ?></span>
                   <p>Member Since <?php echo $officer['date_of_membership'] ?></p>
                   <div class="social">
-                    <a href=""><i class="ri-twitter-fill"></i></a>
                     <a href=""><i class="ri-facebook-fill"></i></a>
                     <a href=""><i class="ri-instagram-fill"></i></a>
-                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
                   </div>
                 </div>
               </div>
