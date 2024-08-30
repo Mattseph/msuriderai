@@ -21,10 +21,8 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <!-- Template Main CSS File -->
@@ -34,7 +32,7 @@
 
 <body>
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="ri-arrow-up-line"></i></a>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -50,7 +48,7 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="getstarted scrollto" href="#hero">Get Started</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="ri-list-check mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -66,10 +64,10 @@
           <!-- <button type="button" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" id="stopCamera" onclick="stopCamera()" style="display:none">X</button> -->
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <button type="button" id="startCamera" onclick="startCamera()" class="btn-start-camera scrollto" data-toggle="modal" data-target="#platenumber_scanner">Camera <i class='bi-camera-fill'></i> </button>
+            <button type="button" id="startCamera" onclick="startCamera()" class="btn-start-camera scrollto" data-toggle="modal" data-target="#platenumber_scanner">Camera <i class="ri-camera-fill"></i> </button>
           </div>
         </div>
-        <div class=" col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
           <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
         </div>
       </div>
