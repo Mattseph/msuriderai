@@ -25,7 +25,6 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -260,10 +259,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./profile/developer.php">Developer</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./profile/rider-officer.php">Officer</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="ri-arrow-right-s-line"></i></i> <a href="#hero">Home</a></li>
+              <li><i class="ri-arrow-right-s-line"></i></i> <a href="./profile/developer.php">Developer</a></li>
+              <li><i class="ri-arrow-right-s-line"></i></i> <a href="./profile/rider-officer.php">Officer</a></li>
+              <li><i class="ri-arrow-right-s-line"></i></i> <a href="#about">About us</a></li>
             </ul>
           </div>
 
@@ -271,11 +270,10 @@
             <h4>Our Social Networks</h4>
             <p>Contact Us</p>
             <div class="social-links mt-3">
-              <a href="#" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.facebook.com/matthewfang.bilaos" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/matt_seph/?next=%2F" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/matthew-joseph-bilaos-98637326a/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/Mattseph" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+              <a href="https://www.facebook.com/matthewfang.bilaos" target="_blank" class="facebook"><i class="ri-facebook-fill"></i></a>
+              <a href="https://www.instagram.com/matt_seph/?next=%2F" target="_blank" class="instagram"><i class="ri-instagram-fill"></i></a>
+              <a href="https://www.linkedin.com/in/matthew-joseph-bilaos-98637326a/" target="_blank" class="linkedin"><i class="ri-linkedin-box-fill"></i></a>
+              <a href="https://github.com/Mattseph" target="_blank" class="github"><i class="ri-github-fill"></i></a>
             </div>
           </div>
 
